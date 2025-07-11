@@ -7,12 +7,8 @@ const spotify = require('./routes/spotifyRoute');
 
 const app = express();
 
-const allowedOrigins = ['https://spotify-frontend-tutg.onrender.com'];
-
-
-
 var corsOptions = {
-  origin: ['https://spotify-zov4.onrender.com','http://localhost:3000','http://localhost:80'],
+  origin: ['https://spotify-zov4.onrender.com','http://localhost:3000','http://localhost:80','https://spotify-frontend-tutg.onrender.com'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   credentials: true,
