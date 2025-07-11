@@ -7,7 +7,13 @@ const spotify = require('./routes/spotifyRoute')
 
 
 const app = express()
-app.use(cors());
+
+app.use(cors({
+  origin: 'https://your-frontend.onrender.com',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
 connectDB()
 app.use(express.json());
 
