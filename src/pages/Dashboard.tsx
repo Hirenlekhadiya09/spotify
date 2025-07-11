@@ -47,7 +47,9 @@ const Dashboard: React.FC = () => {
     const [selectedPlaylists, setSelectedPlaylists] = useState<{ [key: string]: string }>({});
     const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
     const [selectedDeleteId, setSelectedDeleteId] = useState<string | null>(null);
-    const apiRoute = "http://localhost:5000/api";
+    // const apiRoute = "http://localhost:5000/api";
+    const apiRoute = "https://spotify-zov4.onrender.com/api";
+
 
     const handleOpen = (playlist?: any) => {
         if (playlist) {

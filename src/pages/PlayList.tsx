@@ -1,74 +1,3 @@
-// import React, { useEffect, useState } from 'react'
-// import axios from 'axios';
-// import { useNavigate, useParams } from 'react-router-dom';
-// import { Box, Button, List, ListItem, ListItemText, Typography } from '@mui/material';
-
-
-// const PlayList: React.FC = () => {
-
-//     const [playlist, setPlaylist] = useState<any>(null);
-//     const token = localStorage.getItem('token');
-//     const { id } = useParams();
-//     const navigate = useNavigate();
-//     const apiRoute = "http://localhost:5000/api";
-
-//     const getplaylist = async () => {
-//         try {
-//             const response = await axios.get(`${apiRoute}/getplaylist/${id}`, {
-//                 headers: {
-//                     Authorization: `Bearer ${token}`,
-//                 },
-//             });
-//             setPlaylist(response.data);
-//         } catch (error) {
-//             console.error('Error fetching playlist', error);
-//         }
-//     }
-
-
-//     useEffect(() => {
-//         getplaylist();
-//     }, [id])
-
-//     if (!playlist) {
-//         return (
-//             <Box p={4}>
-//                 <Typography variant="h6">Loading</Typography>
-//             </Box>
-//         );
-//     }
-
-//     return (
-//         <>
-//             <Box p={4}>
-//                 <Button variant="contained" onClick={() => navigate('/dashboard')} sx={{ mb: 2 }}>
-//                      Back to Dashboard
-//                 </Button>
-//                 <Typography variant="h4" mb={2}>{playlist.name}</Typography>
-//                 <Typography variant="subtitle1" mb={3}>{playlist.description}</Typography>
-//                 <Typography variant="h6">Songs:</Typography>
-//                 {playlist.songs?.length > 0 ? (
-//                     <List>
-//                         {playlist.songs.map((song: any, index: number) => (
-//                             <ListItem key={index}>
-//                                 <ListItemText
-//                                     primary={song.title}
-//                                     secondary={`${song.artist} - ${song.album}`}
-//                                 />
-//                             </ListItem>
-//                         ))}
-//                     </List>
-//                 ) : (
-//                     <Typography>No songs in this playlist.</Typography>
-//                 )}
-//             </Box>
-//         </>
-//     )
-// }
-
-// export default PlayList
-
-
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import {
@@ -86,7 +15,9 @@ const PlayList: React.FC = () => {
   const token = localStorage.getItem('token');
   const { id } = useParams();
   const navigate = useNavigate();
-  const apiRoute = 'http://localhost:5000/api';
+  // const apiRoute = 'http://localhost:5000/api';
+  const apiRoute = "https://spotify-zov4.onrender.com/api";
+
 
   const getPlaylist = async () => {
     try {

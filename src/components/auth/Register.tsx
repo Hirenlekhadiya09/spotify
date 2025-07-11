@@ -26,7 +26,9 @@ const Register: React.FC = () => {
 
     const [data, setData] = useState<string>('');
     const navigate = useNavigate();
-    const apiRoute = "http://localhost:5000/api";
+    // const apiRoute = "http://localhost:5000/api";
+     const apiRoute = "https://spotify-zov4.onrender.com/api";
+
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
